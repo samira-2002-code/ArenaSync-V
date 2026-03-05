@@ -1,16 +1,18 @@
-  export function StatusBadge(status){
-    let colorClass="";
-    switch(status){
-        case "on going":colorClass="bg-green-500";
-        break;
-        case "upcoming":colorClass="bg-blue-500";
-        break;
-        case "pending":colorClass="bg-orange-500";
-        break;
-        default:colorClass="bg-gray-400";
-    
-    }
-    retun `<span class "text-white px-2 py-1 rounded-full ${colorClass} " >${status}</span>`
-  }
+export default function StatusBadge({ status }) {
+  const styles = {
+    "On Going": "bg-green-500 text-white",
+    "Upcoming": "bg-blue-500 text-white",
+    "Pending": "bg-orange-400 text-white",
+    "Confirmed": "bg-green-100 text-green-700",
+  };
 
-
+  return (
+    <p
+      className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-sm ${
+        styles[status] || "bg-gray-400 text-white"
+      }`}
+    >
+      {status}
+    </p>
+  );
+}
