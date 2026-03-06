@@ -1,9 +1,9 @@
 export default function StatusBadge({ status }) {
   const styles = {
-    "On Going": "bg-green-500 text-white",
-    "Upcoming": "bg-blue-500 text-white",
-    "Pending": "bg-orange-400 text-white",
-    "Confirmed": "bg-green-100 text-green-700",
+    "On Going": "bg-green-500 text-white w-40",
+    "Upcoming": "bg-blue-500 text-white w-40",
+    "Pending": "bg-red-500 text-white w-40",
+    "Confirmed": "bg-green-100 text-green-700 w-40",
   };
 
   return (

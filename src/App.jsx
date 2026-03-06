@@ -1,6 +1,8 @@
-import "./App.css";
+import Header from "./components/Header";
 import StatusBadge from "./components/StatusBadge";
 import { tournamentData } from "./data/TournamentDB";
+
+
 
 export default function App() {
 
@@ -10,11 +12,14 @@ export default function App() {
   for (let i = 0; i < tournamentData.length; i++) {
     badges.push(
       <StatusBadge key={i} status={tournamentData[i].status} />
+
     );
   }
 
   return (
     <div>
+      
+      <Header/>
       {badges}
     </div>
   );
