@@ -17,14 +17,14 @@ export default function RegistrationForm({ onADDParticipant}){
         setLevel("");
     };
      return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 border p-4 rounded shadow-lg w-96">
+    <form onSubmit={handelSubmit} className="flex flex-col gap-6 border p-8 rounded shadow-lg w-96 bg-blue-100 ml-20 mb-4">
 
       <input
         type="text"
         placeholder="Nom"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="border p-2 rounded"
+        className="border p-2 rounded-full"
       />
 
       <input
@@ -32,7 +32,7 @@ export default function RegistrationForm({ onADDParticipant}){
         placeholder="Équipe"
         value={team}
         onChange={(e) => setTeam(e.target.value)}
-        className="border p-2 rounded"
+        className="border p-2 rounded-full"
       />
 
       <input
@@ -40,14 +40,14 @@ export default function RegistrationForm({ onADDParticipant}){
         placeholder="Niveau"
         value={level}
         onChange={(e) => setLevel(e.target.value)}
-        className="border p-2 rounded"
+        className="border p-2 rounded-full"
       />
 
       <button
         type="submit"
         disabled={name.length < 3}
         className={`p-2 rounded text-white ${
-          name.length < 3 ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500"
+          name.length < 3 ? "bg-gray-400 cursor-not-allowed " : "bg-blue-500"
         }`}
       >
         Valider

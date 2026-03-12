@@ -25,7 +25,7 @@ export default function App() {
        ))
        
       }
-      <RegistrationForm/>
+      <RegistrationForm />
     </div>
   );
 }
