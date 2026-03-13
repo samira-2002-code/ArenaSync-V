@@ -17,7 +17,7 @@ export default function RegistrationForm({ onADDParticipant}){
         setLevel("");
     };
      return (
-    <form onSubmit={handelSubmit} className="flex flex-col gap-6 border p-8 rounded shadow-lg w-96 bg-blue-100 ml-20 mb-4">
+    <form onSubmit={handelSubmit} className="flex flex-col gap-6 border p-6 rounded shadow-lg w-84 bg-blue-100 ml-4 mr-4 mt-4  mb-8  md:ml-20">
 
       <input
         type="text"
@@ -47,7 +47,7 @@ export default function RegistrationForm({ onADDParticipant}){
         type="submit"
         disabled={name.length < 3}
         className={`p-2 rounded text-white ${
-          name.length < 3 ? "bg-gray-400 cursor-not-allowed " : "bg-blue-500"
+          name.length < 3 ? "bg-gray-500 cursor-not-allowed rounded-full w-40 ml-6  " : "bg-blue-500"
         }`}
       >
         Valider

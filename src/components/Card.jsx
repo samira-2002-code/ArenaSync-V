@@ -1,5 +1,6 @@
 import {useState} from "react";
 import StatusBadge from "./StatusBadge";
+import RegistrationForm from "./RegistrationForm";
 
 export default function Card({ tournament }) {
   const [isRegistered,setisRegistered]= useState(false);
@@ -27,8 +28,10 @@ export default function Card({ tournament }) {
             }       `}
 >
             {isRegistered ? "Se désinscrire" : "S'inscrire"}
-    
+
+     
     </button>
+     {isRegistered && <RegistrationForm/>}
     </div>
   );
 };

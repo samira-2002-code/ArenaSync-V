@@ -1,8 +1,8 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import Input from "./components/Input";
 import Card from "./components/Card";
 import RegistrationForm from "./components/RegistrationForm";
-
 import StatusBadge from "./components/StatusBadge";
 import { tournamentData } from "./data/TournamentDB";
 
@@ -11,6 +11,13 @@ import { tournamentData } from "./data/TournamentDB";
 export default function App() {
 
 
+
+  const [participants, setParticipants] = useState([]);
+
+  const addParticipant = (participant) => {
+    setParticipants([...participants, participant]);
+    console.log(participant);
+  }
 
 
   return (
@@ -25,7 +32,7 @@ export default function App() {
        ))
        
       }
-      <RegistrationForm />
+        
     </div>
   );
 }
