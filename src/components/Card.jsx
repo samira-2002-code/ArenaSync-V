@@ -1,10 +1,12 @@
-import {useState} from "react";
+import { useState } from "react";
 import StatusBadge from "./StatusBadge";
 import RegistrationForm from "./RegistrationForm";
+import TournamentDetails from "./TournamentDetails";
 
 export default function Card({ tournament }) {
-  const [isRegistered,setisRegistered]= useState(false);
-  const toggleRegistered =()=>{
+  const [isRegistered, setisRegistered] = useState(false);
+  const [showDetails, setShowDetails] = useState(false)
+  const toggleRegistered = () => {
     setisRegistered(!isRegistered);
   };
 
@@ -21,17 +23,19 @@ export default function Card({ tournament }) {
         <StatusBadge status={tournament.status} />
       </div>
 
-     <button
-            onClick={toggleRegistered}
-            className={`mt-4 px-4 py-2 rounded-full text-white ${
-             isRegistered ? "bg-red-500" : "bg-blue-500"
-            }       `}
->
-            {isRegistered ? "Se désinscrire" : "S'inscrire"}
+      <button
+        onClick={toggleRegistered}
+        className={`mt-4 px-4 py-2 rounded-full text-white ${isRegistered ? "bg-red-500" : "bg-blue-500"
+          }       `}
+      >
+        {isRegistered ? "Se désinscrire" : "S'inscrire"}
 
-     
-    </button>
-     {isRegistered && <RegistrationForm/>}
+
+      </button>
+      {isRegistered && <RegistrationForm />}
+
+      <button onClick={()=>setShowDetails(!showDetails)} className="mt-4 px-4 py-2 rounded-full text-white bg-blue-500 ml-10"> show details </button>
+           { showDetails && <TournamentDetails /> }
     </div>
   );
 };

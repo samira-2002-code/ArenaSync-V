@@ -10,7 +10,10 @@ export default function RegistrationForm({ onADDParticipant}){
 
         if(name.length <3)
             return
-        const newParticipant ={name,team,level};
+        const newParticipant ={
+          name,
+          team,
+          level};
         onADDParticipant(newParticipant);
         setName("");
         setTeam("");

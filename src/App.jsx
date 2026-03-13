@@ -32,7 +32,13 @@ export default function App() {
        ))
        
       }
+      <RegistrationForm onADDParticipant={addParticipant} />
         
+          {participants.map((p, index) => (
+        <div key={index}>
+          {p.name} - {p.team} - {p.level}
+        </div>
+      ))}
     </div>
   );
 }
